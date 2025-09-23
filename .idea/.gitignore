@@ -1,5 +1,20 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-.idea
-EFREI.iml
+# Ignore les fichiers et dossiers IntelliJ IDEA
+.idea/
+*.iml
+
+# Ignore les fichiers compilés Java
+*.class
+
+# Ignore les dossiers de sortie
+/out/
+/build/
+/target/
+
+# Ignore les fichiers temporaires
+*.log
+*.tmp
+*.swp
+
+# Ignore les fichiers système (Windows / Mac)
+.DS_Store
+Thumbs.db
