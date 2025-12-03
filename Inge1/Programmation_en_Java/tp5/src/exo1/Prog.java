@@ -1,0 +1,2 @@
+package exo1;public class Prog {
+}
