@@ -1,6 +1,5 @@
-package tp2;
+package exo2;
 
-import javax.sound.midi.SysexMessage;
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +7,7 @@ public class Main {
         Historique h = new Historique("efrei.net");
         h.ajouterElement("cnn.com");
         h.ajouterElement("yahoo.com");
-
+        System.out.println(h.current);
         Scanner sc = new Scanner(System.in);
 
         String next = "";

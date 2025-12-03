@@ -1,0 +1,40 @@
+@startuml
+actor Client
+participant GAB
+participant "Systeme d'Autorisation Visa"
+database GABDatabase
+Client -> GAB : introduitCarte
+GAB -> GAB : verifieConformite()
+alt cartValide 
+GAB -> Client : demanderCode()
+Client -> GAB : saisirCode()
+GAB -> GAB : verifierCode(code)
+alt codeCorrect 
+GAB -> "Systeme d'Autorisation Visa" : obtenirSoldeMaximumDeRetrait
+"Systeme d'Autorisation Visa" --> GAB : soldeMaximum
+GAB -> Client : demanderMontantARetirer()
+Client --> GAB : montantARetirer
+GAB -> GAB : controlerMontant()
+alt montantRetirable
+GAB -> Client : demanderSiTicket()
+Client --> GAB : ticketDemande
+GAB -> Client : éjecterCarte()
+GAB -> Client : delivrerBillet()
+GAB -> GABDatabase : enregistrerTransaction()
+opt ticketDemande 
+   GAB -> Client : imprimerTicket()
+end
+else montantIrretirable
+    GAB -> Client : afficherMessage("montantIrretirable (Verifier votre solde ou votre compte")
+    GAB -> Client : éjecterCarte()
+else code Incorrect
+    GAB -> Client : afficherMessage("Code incorrect")
+    GAB -> Client : éjecterCarte()
+end
+
+else carteInvalide
+    GAB -> Client : afficherMessage("Carte invalide")
+    GAB -> Client : éjecterCarte()
+end
+
+@enduml

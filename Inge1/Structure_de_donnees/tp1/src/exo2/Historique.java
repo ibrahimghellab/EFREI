@@ -1,6 +1,4 @@
-package tp2;
-
-import java.util.Date;
+package exo2;
 
 public class Historique {
     Maillon current;
@@ -25,7 +23,6 @@ public class Historique {
             current.setPrecedent(current);
         }else{
             Maillon newMaillon = new Maillon(s);
-            System.out.println(current);
             newMaillon.setSuivant(current.getSuivant());
             newMaillon.setPrecedent(current);
 
@@ -33,9 +30,9 @@ public class Historique {
             current.setSuivant(newMaillon);
 
             current = newMaillon;
-            System.out.println("Prédédent : " +current.getPrecedent());
-            System.out.println("Courant : " + current);
-            System.out.println("Suivant : " + current.getSuivant());
+//            System.out.println("Prédédent : " +current.getPrecedent());
+//            System.out.println("Courant : " + current);
+//            System.out.println("Suivant : " + current.getSuivant());
 
 
 

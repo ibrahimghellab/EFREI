@@ -1,3 +1,5 @@
+package exo1;
+
 public class ListeChaine {
     Maillon head;
 
@@ -87,21 +89,29 @@ public class ListeChaine {
     }
 
 
-    public void afficherListe(){
-        if(head == null ){
+    public Maillon getHead() {
+        return head;
+    }
+
+    public void afficherListe() {
+        if (head == null) {
             System.out.println("Liste vide");
             return;
         }
-        Maillon maillonCourant = head;
-        while(maillonCourant.suivant !=null){
 
-            System.out.println(maillonCourant.x);
-            System.out.println("|");
-            System.out.println("^");
-            maillonCourant = maillonCourant.suivant;
+        Maillon courant = head;
+        while (courant != null) {
+            System.out.print(courant.x);
+            if (courant.suivant != null) {
+                System.out.print(" -> ");
+            }
+            courant = courant.suivant;
         }
-        System.out.println(maillonCourant.x);
+        System.out.println(); // retour à la ligne à la fin
     }
 
 
+    public void setHead(Maillon prev) {
+        this.head = prev;
+    }
 }

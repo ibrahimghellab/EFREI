@@ -1,2 +1,6 @@
-package exo1;public interface Paiement {
+package exo1;
+
+public interface Paiement {
+    String effectuerPaiement(double montant);
+
 }

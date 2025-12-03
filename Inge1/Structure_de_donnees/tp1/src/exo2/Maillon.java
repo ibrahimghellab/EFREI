@@ -1,10 +1,6 @@
-package tp2;
+package exo2;
 
-import exo1.Main;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Maillon {
     private String valeur;
