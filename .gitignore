@@ -9,7 +9,8 @@
 /out/
 /build/
 /target/
-
+/.vscode/
+/RAPPORT/
 # Ignore les fichiers temporaires
 *.log
 *.tmp
@@ -18,5 +19,3 @@
 # Ignore les fichiers système (Windows / Mac)
 .DS_Store
 Thumbs.db
-
-RAPPORT
